@@ -1,0 +1,9 @@
+{
+    "version": 2,
+    "routes": [
+      { "src": "/", "dest": "/ux4.html" },
+      { "src": "/(.*)", "dest": "/$1" }
+    ],
+    "cleanUrls": true,
+    "trailingSlash": false
+  }
