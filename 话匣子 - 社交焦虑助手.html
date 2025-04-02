@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<!-- saved from url=(0115)file:///D:/desktop/11/%E8%AF%9D%E5%8C%A3%E5%AD%90%20-%20%E7%A4%BE%E4%BA%A4%E7%84%A6%E8%99%91%E5%8A%A9%E6%89%8B.html -->
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>话匣子 - 社交焦虑助手</title>
+  <link href="./话匣子 - 社交焦虑助手_files/tailwind.min.css" rel="stylesheet">
+  <link href="./话匣子 - 社交焦虑助手_files/custom.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'PingFang SC', 'Helvetica Neue', sans-serif;
+      background-color: #f5f7fa;
+    }
+    .mockup-border {
+      background-color: #fff;
+      border-radius: 32px;
+      box-shadow: 0 0 0 8px #e3e8ec;
+      position: relative;
+      overflow: hidden;
+    }
+    .glass-card {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .pulse-circle {
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(127, 84, 255, 0.5);
+      }
+      70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(127, 84, 255, 0);
+      }
+      100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(127, 84, 255, 0);
+      }
+    }
+    .breathing-animation {
+      animation: breathing 4s ease-in-out infinite;
+    }
+    @keyframes breathing {
+      0%, 100% { transform: scale(0.9); }
+      50% { transform: scale(1.1); }
+    }
+    /* 新增侧滑菜单动画 */
+    .slide-in {
+      animation: slideIn 0.3s forwards;
+    }
+    @keyframes slideIn {
+      from { transform: translateX(100%); }
+      to { transform: translateX(0); }
+    }
+    /* 新增反馈动画 */
+    .feedback-animation {
+      animation: feedback 0.5s ease;
+    }
+    @keyframes feedback {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    /* 紧急通道悬浮按钮 */
+    .emergency-btn {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      z-index: 100;
+      transition: all 0.3s ease;
+    }
+    .emergency-btn:hover {
+      transform: scale(1.1);
+    }
+    /* 操作反馈微动效 */
+    .micro-feedback {
+      transition: all 0.2s ease;
+    }
+    .micro-feedback:active {
+      transform: scale(0.95);
+    }
+  </style>
+</head>
+<body class="bg-gray-100 p-6">
+  <div class="max-w-7xl mx-auto">
+    <h1 class="text-3xl font-bold text-center mb-10 text-indigo-900">话匣子应用 UI/UX 原型</h1>
+
+    <!-- 设备容器 - 横向排列 -->
+    <div class="flex flex-wrap justify-center gap-6 mb-16">
+      
+      <!-- 欢迎/登录页 -->
+      <div class="mockup-border iphone14promax bg-gradient-to-br from-indigo-50 to-purple-50">
+        <div class="h-full flex flex-col p-6">
+          <!-- 顶部状态栏 -->
+          <div class="flex justify-between items-center">
+            <div class="text-xs text-gray-500">20:30</div>
+            <div class="flex gap-1">
+              <img src="./话匣子 - 社交焦虑助手_files/signal.svg" class="w-4 h-4">
+              <img src="./话匣子 - 社交焦虑助手_files/wifi.svg" class="w-4 h-4">
+              <img src="./话匣子 - 社交焦虑助手_files/battery-full.svg" class="w-4 h-4">
+            </div>
+          </div>
+          
+          <!-- 欢迎内容 -->
+          <div class="flex-1 flex flex-col justify-center items-center">
+            <div class="mb-8 relative">
+              <div class="absolute inset-0 bg-indigo-600 rounded-full blur-xl opacity-20"></div>
+              <div class="w-28 h-28 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-full flex justify-center items-center relative">
+                <img src="./话匣子 - 社交焦虑助手_files/message-square.svg" class="w-12 h-12 text-white">
+              </div>
+            </div>
+            <h2 class="text-3xl font-bold mb-2 text-indigo-900">话匣子</h2>
+            <p class="text-gray-500 mb-10 text-center">开启舒适社交之旅</p>
+            
+            <button class="w-full bg-indigo-600 text-white py-3 px-4 rounded-full font-medium shadow-lg shadow-indigo-200 mb-4 flex justify-center items-center gap-2 micro-feedback">
+              <img src="./话匣子 - 社交焦虑助手_files/log-in.svg" class="w-5 h-5">
+              登录
+            </button>
+            <button class="w-full bg-white text-indigo-600 py-3 px-4 rounded-full font-medium border border-indigo-200 shadow-sm mb-8 flex justify-center items-center gap-2 micro-feedback">
+              <img src="./话匣子 - 社交焦虑助手_files/user-plus.svg" class="w-5 h-5">
+              注册账号
+            </button>
+            
+            <div class="flex gap-4">
+              <button class="w-12 h-12 rounded-full bg-white flex justify-center items-center shadow-sm micro-feedback">
+                <img src="./话匣子 - 社交焦虑助手_files/wechat.svg" class="w-6 h-6 text-green-500">
+              </button>
+              <button class="w-12 h-12 rounded-full bg-white flex justify-center items-center shadow-sm micro-feedback">
+                <img src="./话匣子 - 社交焦虑助手_files/message-circle.svg" class="w-6 h-6 text-blue-500">
+              </button>
+              <button class="w-12 h-12 rounded-full bg-white flex justify-center items-center shadow-sm micro-feedback">
+                <img src="./话匣子 - 社交焦虑助手_files/smartphone.svg" class="w-6 h-6 text-gray-500">
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 首页 -->
+      <div class="mockup-border iphone14promax bg-gradient-to-br from-indigo-50 to-purple-50">
+        <div class="h-full flex flex-col relative">
+          <!-- 顶部状态栏 -->
+          <div class="flex justify-between items-center p-6 pb-0">
+            <div class="text-xs text-gray-500">20:30</div>
+            <div class="flex gap-1">
+              <img src="./话匣子 - 社交焦虑助手_files/signal.svg" class="w-4 h-4">
+              <img src="./话匣子 - 社交焦虑助手_files/wifi.svg" class="w-4 h-4">
+              <img src="./话匣子 - 社交焦虑助手_files/battery-full.svg" class="w-4 h-4">
+            </div>
+          </div>
+          
+          <!-- 头部欢迎 -->
+          <div class="p-6 pb-4">
+            <div class="flex justify-between items-center mb-4">
+              <div>
+                <h2 class="text-xl font-bold text-indigo-900">你好，小林</h2>
+                <p class="text-gray-500 text-sm">今天是你使用话匣子的第5天</p>
+              </div>
+              <div class="relative">
+                
+                <img src="./话匣子 - 社交焦虑助手_files/photo-1494790108377-be9c29b29330" class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm">
+              </div>
+            </div>
+            
+            <!-- 每日任务卡片 -->
+            <div class="bg-white rounded-2xl p-4 shadow-sm border border-indigo-50 mb-4">
+              <div class="flex justify-between items-center mb-3">
+                <h3 class="font-semibold text-indigo-900 flex items-center gap-1">
+                  <img src="./话匣子 - 社交焦虑助手_files/calendar-check.svg" class="w-4 h-4">
+                  今日任务
+                </h3>
+                <span class="text-xs font-medium bg-indigo-100 text-indigo-700 py-1 px-2 rounded-full">2/3</span>
+              </div>
+              <div class="space-y-2">
+                <div class="flex items-center gap-2">
+                  <div class="w-5 h-5 rounded-full bg-indigo-100 flex items-center justify-center">
+                    <img src="./话匣子 - 社交焦虑助手_files/check.svg" class="w-3 h-3 text-indigo-600">
+                  </div>
+                  <span class="text-sm text-gray-600 line-through">完成一次虚拟对话训练</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="w-5 h-5 rounded-full bg-indigo-100 flex items-center justify-center">
+                    <img src="./话匣子 - 社交焦虑助手_files/check.svg" class="w-3 h-3 text-indigo-600">
+                  </div>
+                  <span class="text-sm text-gray-600 line-through">记录一次负面想法</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="w-5 h-5 rounded-full border border-gray-300"></div>
+                  <span class="text-sm text-gray-600">制定一个社交计划</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 主功能区 -->
+          <div class="px-6 overflow-y-auto flex-1">
+            <div class="grid grid-cols-2 gap-3 mb-4">
+              <!-- 虚拟社交训练 -->
+              <div class="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl p-4 flex flex-col h-32 shadow-lg shadow-indigo-100 micro-feedback">
+                <div class="flex justify-between items-start">
+                  <div class="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center">
+                    <img src="./话匣子 - 社交焦虑助手_files/users.svg" class="w-5 h-5 text-white">
+                  </div>
+                  <span class="text-xs font-medium bg-white bg-opacity-20 text-white py-1 px-2 rounded-full">热门</span>
+                </div>
+                <div class="mt-auto">
+                  <h3 class="font-bold text-white">虚拟社交</h3>
+                  <p class="text-white text-opacity-80 text-xs">练习真实场景对话</p>
+                </div>
+              </div>
+              
+              <!-- 认知重构 -->
+              <div class="bg-white rounded-2xl p-4 flex flex-col h-32 shadow-sm border border-indigo-50 micro-feedback">
+                <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center">
+                  <img src="./话匣子 - 社交焦虑助手_files/brain.svg" class="w-5 h-5 text-orange-500">
+                </div>
+                <div class="mt-auto">
+                  <h3 class="font-bold text-gray-800">认知重构</h3>
+                  <p class="text-gray-500 text-xs">纠正负面思维模式</p>
+                </div>
+              </div>
+              
+              <!-- 社交计划 -->
+              <div class="bg-white rounded-2xl p-4 flex flex-col h-32 shadow-sm border border-indigo-50 micro-feedback">
+                <div class="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center">
+                  <img src="./话匣子 - 社交焦虑助手_files/calendar.svg" class="w-5 h-5 text-teal-500">
+                </div>
+                <div class="mt-auto">
+                  <h3 class="font-bold text-gray-800">社交计划</h3>
+                  <p class="text-gray-500 text-xs">制定并跟踪社交活动</p>
+                </div>
+              </div>
+              
+              <!-- 紧急工具箱 -->
+              <div class="bg-white rounded-2xl p-4 flex flex-col h-32 shadow-sm border border-indigo-50 micro-feedback pulse-circle">
+                <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center">
+                  <img src="./话匣子 - 社交焦虑助手_files/heart-pulse.svg" class="w-5 h-5 text-red-500">
+                </div>
+                <div class="mt-auto">
+                  <h3 class="font-bold text-gray-800">紧急工具箱</h3>
+                  <p class="text-gray-500 text-xs">缓解焦虑应急方案</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- 最近进度 -->
+            <h3 class="font-semibold text-indigo-900 mb-3">最近训练</h3>
+            <div class="space-y-3">
+              <div class="bg-white rounded-2xl p-4 shadow-sm border border-indigo-50 flex items-center gap-3 micro-feedback">
+                <div class="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center flex-shrink-0">
+                  <img src="./话匣子 - 社交焦虑助手_files/coffee.svg" class="w-6 h-6 text-indigo-600">
+                </div>
+                <div class="flex-1">
+                  <h4 class="font-medium text-gray-800">咖啡厅点餐对话</h4>
+                  <div class="flex justify-between items-center">
+                    <p class="text-gray-500 text-xs">完成了基础难度</p>
+                    <span class="text-xs font-medium text-indigo-600">昨天</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="bg-white rounded-2xl p-4 shadow-sm border border-indigo-50 flex items-center gap-3 micro-feedback">
+                <div class="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center flex-shrink-0">
+                  <img src="./话匣子 - 社交焦虑助手_files/users.svg" class="w-6 h-6 text-orange-500">
+                </div>
+                <div class="flex-1">
+                  <h4 class="font-medium text-gray-800">团队会议发言</h4>
+                  <div class="flex justify-between items-center">
+                    <p class="text-gray-500 text-xs">完成了中级难度</p>
+                    <span class="text-xs font-medium text-indigo-600">3天前</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 紧急通道悬浮按钮 -->
+          
+          
+          <!-- 底部导航 - 统一为四个标签 -->
+          <div class="bg-white border-t border-gray-100 p-2 flex justify-around">
+            <button class="w-16 h-16 flex flex-col items-center justify-center text-indigo-600">
+              <img src="./话匣子 - 社交焦虑助手_files/house.svg" class="w-6 h-6 mb-1">
+              <span class="text-xs">首页</span>
+            </button>
+            <button class="w-16 h-16 flex flex-col items-center justify-center text-gray-400">
+              <img src="./话匣子 - 社交焦虑助手_files/users.svg" class="w-6 h-6 mb-1">
+              <span class="text-xs">社交训练</span>
+            </button>
+            <button class="w-16 h-16 flex flex-col items-center justify-center text-gray-400">
+              <img src="./话匣子 - 社交焦虑助手_files/brain.svg" class="w-6 h-6 mb-1">
+              <span class="text-xs">认知重构</span>
+            </button>
+            <button class="w-16 h-16 flex flex-col items-center justify-center text-gray-400">
+              <img src="./话匣子 - 社交焦虑助手_files/user.svg" class="w-6 h-6 mb-1">
+              <span class="text-xs">我的</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 虚拟社交训练-选择场景 -->
+      <div class="mockup-border iphone14promax bg-gradient-to-br from-indigo-50 to-purple-50">
+        <div class="h-full flex flex-col relative">
+          <!-- 顶部导航 -->
+          <div class="p-6 flex items-center gap-2">
+            <button class="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm micro-feedback">
+              <img src="./话匣子 - 社交焦虑助手_files/chevron-left.svg" class="w-5 h-5">
+            </button>
+            <h2 class="text-lg font-bold text-indigo-900 flex-1 text-center">虚拟社交训练</h2>
+          </div>
+          
+          <!-- 场景选择 - 渐进暴露结构 -->
+          <div class="px-6 overflow-y-auto flex-1">
+            <div class="flex items-center mb-4">
+              <div class="flex-1 h-0.5 bg-gray-200"></div>
+              <span class="px-4 text-sm font-medium text-gray-500">按难度选择训练场景</span>
+              <div class="flex-1 h-0.5 bg-gray-200"></div>
+            </div>
+            
+            <!-- 初级场景 - 渐进暴露第一层 -->
+            <h3 class="font-semibold text-indigo-900 mb-3 flex items-center gap-1">
+              <img src="./话匣子 - 社交焦虑助手_files/shield.svg" class="w-4 h-4">
+              轻松入门 (推荐新手)
+            </h3>
+            <div class="grid grid-cols-2 gap-3 mb-6">
+              <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-indigo-50 feedback-animation micro-feedback">
+                <div class="h-24 bg-cover bg-center" style="background-image: url(&#39;https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80&#39;)"></div>
+                <div class="p-3">
+                  <h4 class="font-medium text-gray-800 mb-1">餐厅点餐</h4>
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs bg-green-100 text-green-700 py-0.5 px-2 rounded-full">简单</span>
+                    <span class="text-xs text-gray-500">5分钟</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-indigo-50 micro-feedback">
+                <div class="h-24 bg-cover bg-center" style="background-image: url(&#39;https://images.unsplash.com/photo-1534482421-64566f976cfa?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80&#39;)"></div>
+                <div class="p-3">
+                  <h4 class="font-medium text-gray-800 mb-1">商店购物</h4>
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs bg-green-100 text-green-700 py-0.5 px-2 rounded-full">简单</span>
+                    <span class="text-xs text-gray-500">5分钟</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- 中级场景 - 渐进暴露第二层 -->
+            <h3 class="font-semibold text-indigo-900 mb-3 flex items-center gap-1">
+              <img src="./话匣子 - 社交焦虑助手_files/zap.svg" class="w-4 h-4">
+              进阶挑战
+            </h3>
+            <div class="grid grid-cols-2 gap-3 mb-6">
+              <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-indigo-50 micro-feedback">
+                <div class="h-24 bg-cover bg-center" style="background-image: url(&#39;https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80&#39;)"></div>
+                <div class="p-3">
+                  <h4 class="font-medium text-gray-800 mb-1">团队会议</h4>
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs bg-yellow-100 text-yellow-700 py-0.5 px-2 rounded-full">中等</span>
+                    <span class="text-xs text-gray-500">10分钟</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-indigo-50 micro-feedback">
+                <div class="h-24 bg-cover bg-center" style="background-image: url(&#39;https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80&#39;)"></div>
+                <div class="p-3">
+                  <h4 class="font-medium text-gray-800 mb-1">社交派对</h4>
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs bg-yellow-100 text-yellow-700 py-0.5 px-2 rounded-full">中等</span>
+                    <span class="text-xs text-gray-500">15分钟</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- 高级场景 - 渐进暴露第三层 -->
+            <h3 class="font-semibold text-indigo-900 mb-3 flex items-center gap-1">
+              <img src="./话匣子 - 社交焦虑助手_files/award.svg" class="w-4 h-4">
+              高阶成长
+            </h3>
+            <div class="grid grid-cols-2 gap-3 mb-6">
+              <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-indigo-50 micro-feedback">
+                <div class="h-24 bg-cover bg-center" style="background-image: url(&#39;https://images.unsplash.com/photo-1573496546038-82f9c39f6365?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1169&amp;q=80&#39;)"></div>
+                <div class="p-3">
+                  <h4 class="font-medium text-gray-800 mb-1">面试情景</h4>
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs bg-red-100 text-red-700 py-0.5 px-2 rounded-full">困难</span>
+                    <span class="text-xs text-gray-500">20分钟</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-indigo-50 relative micro-feedback">
+                <div class="absolute inset-0 bg-gray-100 bg-opacity-70 flex items-center justify-center z-10">
+                  <div class="bg-white rounded-lg p-2 shadow-sm">
+                    <span class="text-xs font-medium text-indigo-700">完成3次中级训练解锁</span>
+                  </div>
+                </div>
+                <div class="h-24 bg-cover bg-center" style="background-image: url(&#39;https://images.unsplash.com/photo-1515187029135-18ee286d815b?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80&#39;)"></div>
+                <div class="p-3">
+                  <h4 class="font-medium text-gray-800 mb-1">演讲训练</h4>
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs bg-red-100 text-red-700 py-0.5 px-2 rounded-full">困难</span>
+                    <span class="text-xs text-gray-500">25分钟</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- 用户自定义场景 -->
+            <div class="flex justify-between items-center mb-3">
+              <h3 class="font-semibold text-indigo-900 flex items-center gap-1">
+                <img src="./话匣子 - 社交焦虑助手_files/star.svg" class="w-4 h-4">
+                我的创建
+              </h3>
+              <button class="text-xs font-medium text-indigo-600 flex items-center gap-1 micro-feedback">
+                <img src="./话匣子 - 社交焦虑助手_files/plus.svg" class="w-3 h-3">
+                创建
+              </button>
+            </div>
+            <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-indigo-50 mb-3 micro-feedback">
+              <div class="h-24 bg-cover bg-center" style="background-image: url(&#39;https://images.unsplash.com/photo-1528605105345-5344ea20e269?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80&#39;)"></div>
+              <div class="p-3">
+                <h4 class="font-medium text-gray-800 mb-1">与喜欢的人交谈</h4>
+                <div class="flex items-center justify-between">
+                  <span class="text-xs bg-indigo-100 text-indigo-700 py-0.5 px-2 rounded-full">自定义</span>
+                  <span class="text-xs text-gray-500">创建于昨天</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 紧急通道悬浮按钮 -->
+          
+          
+          <!-- 底部导航 - 统一为四个标签 -->
+          <div class="bg-white border-t border-gray-100 p-2 flex justify-around bottom-nav">
+            <button class="w-16 h-16 flex flex-col items-center justify-center text-gray-400">
+              <img src="./话匣子 - 社交焦虑助手_files/house.svg" class="w-6 h-6 mb-1">
+              <span class="text-xs">首页</span>
+            </button>
+            <button class="w-16 h-16 flex flex-col items-center justify-center text-indigo-600">
+              <img src="./话匣子 - 社交焦虑助手_files/users.svg" class="w-6 h-6 mb-1">
+              <span class="text-xs">社交训练</span>
+            </button>
+            <button class="w-16 h-16 flex flex-col items-center justify-center text-gray-400">
+              <img src="./话匣子 - 社交焦虑助手_files/brain.svg" class="w-6 h-6 mb-1">
+              <span class="text-xs">认知重构</span>
+            </button>
+            <button class="w-16 h-16 flex flex-col items-center justify-center text-gray-400">
+              <img src="./话匣子 - 社交焦虑助手_files/user.svg" class="w-6 h-6 mb-1">
+              <span class="text-xs">我的</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 虚拟社交训练-对话界面 -->
+      <div class="mockup-border iphone14promax bg-gradient-to-br from-indigo-50 to-purple-50">
+        <div class="h-full flex flex-col relative">
+          <!-- 顶部导航 -->
+          <div class="p-6 pb-2 flex items-center gap-2">
+            <button class="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm micro-feedback">
+              <img src="./话匣子 - 社交焦虑助手_files/chevron-left.svg" class="w-5 h-5">
+            </button>
+            <div class="flex-1">
+              <h2 class="text-lg font-bold text-indigo-900">餐厅点餐对话</h2>
+              <p class="text-xs text-gray-500">基础难度 · 虚拟角色: 服务员</p>
+            </div>
+            <button class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center micro-feedback">
+              <img src="./话匣子 - 社交焦虑助手_files/x.svg" class="w-4 h-4 text-red-500">
+            </button>
+          </div>
+          
+          <!-- 对话区域 -->
+          <div class="px-4 pb-4 overflow-y-auto flex-1 chat-messages"><div class="text-center my-2">
+              <span class="text-xs bg-gray-100 text-gray-500 py-1 px-3 rounded-full">今天 20:35</span>
+            </div>
+                        <div class="bg-gray-100 text-gray-600 rounded-lg p-3 text-sm mb-4 mx-4">
+                            <p>你正在一家咖啡厅，想要点一杯咖啡和一份早餐。服务员正在向你走来。</p>
+                        </div>
+                    
+        <div class="flex items-start mb-4">
+            <div class="w-8 h-8 rounded-full bg-indigo-100 flex-shrink-0 flex items-center justify-center">
+                <img src="./话匣子 - 社交焦虑助手_files/user.svg" class="w-4 h-4 text-indigo-600">
+            </div>
+            <div class="ml-2 bg-white rounded-lg rounded-tl-none py-2 px-3 shadow-sm max-w-[85%]">
+                <p class="text-gray-800">您好，欢迎光临！请问需要点些什么？</p>
+            </div>
+        </div>
+    </div>
+          
+          <!-- 底部区域 - 使用flex布局 -->
+          <div class="flex flex-col bottom-area">
+            <!-- 悬浮按钮区域 -->
+            <div class="flex justify-end px-4 py-2">
+              <div class="flex flex-col gap-3">
+                <button class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center shadow-md micro-feedback hover:transform hover:scale-110 transition-all group hint-button">
+                  <img src="./话匣子 - 社交焦虑助手_files/lightbulb.svg" class="w-5 h-5 text-green-500">
+                  <span class="absolute right-12 bg-white px-2 py-1 rounded-md text-xs shadow-sm text-gray-700 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">提示</span>
+                </button>
+                <button class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center shadow-md micro-feedback hover:transform hover:scale-110 transition-all group exit-button">
+                  <img src="./话匣子 - 社交焦虑助手_files/log-out.svg" class="w-5 h-5 text-purple-500">
+                  <span class="absolute right-12 bg-white px-2 py-1 rounded-md text-xs shadow-sm text-gray-700 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">退出</span>
+                </button>
+              </div>
+            </div>
+            
+            <!-- 输入区域 -->
+            <div class="p-4 bg-white border-t border-gray-100 input-area">
+              <div class="flex mb-2">
+                <button class="w-8 h-8 rounded-full bg-gray-100 mr-2 flex items-center justify-center micro-feedback mic-button">
+                  <img src="./话匣子 - 社交焦虑助手_files/mic.svg" class="w-4 h-4 text-gray-500">
+                </button>
+                <div class="flex-1 relative">
+                  <input type="text" placeholder="输入你的回复..." class="w-full py-2 px-4 bg-gray-100 rounded-full focus:outline-none">
+                  <button type="submit" class="absolute right-1 top-1 w-6 h-6 rounded-full bg-indigo-600 flex items-center justify-center micro-feedback">
+                    <img src="./话匣子 - 社交焦虑助手_files/send.svg" class="w-3 h-3 text-white">
+                  </button>
+                </div>
+                <button class="w-8 h-8 rounded-full bg-gray-100 ml-2 flex items-center justify-center micro-feedback undo-button" title="撤回上一条消息">
+                  <img src="./话匣子 - 社交焦虑助手_files/undo.svg" class="w-4 h-4 text-gray-500">
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 底部导航 - 统一为四个标签 -->
+          <div class="bg-white border-t border-gray-100 p-2 flex justify-around bottom-nav">
+            <button class="w-16 h-16 flex flex-col items-center justify-center text-gray-400">
+              <img src="./话匣子 - 社交焦虑助手_files/house.svg" class="w-6 h-6 mb-1">
+              <span class="text-xs">首页</span>
+            </button>
+            <button class="w-16 h-16 flex flex-col items-center justify-center text-indigo-600">
+              <img src="./话匣子 - 社交焦虑助手_files/users.svg" class="w-6 h-6 mb-1">
+              <span class="text-xs">社交训练</span>
+            </button>
+            <button class="w-16 h-16 flex flex-col items-center justify-center text-gray-400">
+              <img src="./话匣子 - 社交焦虑助手_files/brain.svg" class="w-6 h-6 mb-1">
+              <span class="text-xs">认知重构</span>
+            </button>
+            <button class="w-16 h-16 flex flex-col items-center justify-center text-gray-400">
+              <img src="./话匣子 - 社交焦虑助手_files/user.svg" class="w-6 h-6 mb-1">
+              <span class="text-xs">我的</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 认知重构复盘 -->
+      <div class="mockup-border iphone14promax bg-gradient-to-br from-indigo-50 to-purple-50">
+        <div class="h-full flex flex-col relative">
+          <!-- 顶部导航 -->
+          <div class="p-6 flex items-center gap-2">
+            <button class="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm micro-feedback">
+              <img src="./话匣子 - 社交焦虑助手_files/chevron-left.svg" class="w-5 h-5">
+            </button>
+            <h2 class="text-lg font-bold text-indigo-900 flex-1 text-center">认知重构</h2>
+          </div>
+          
+          <!-- 内容区域 -->
+          <div class="px-6 overflow-y-auto flex-1">
+            <div class="flex items-center mb-4">
+              <div class="flex-1 h-0.5 bg-gray-200"></div>
+              <span class="px-4 text-sm font-medium text-gray-500">纠正负面思维</span>
+              <div class="flex-1 h-0.5 bg-gray-200"></div>
+            </div>
+            
+            <!-- 认知重构表单 -->
+            <div class="bg-white rounded-2xl p-4 shadow-sm border border-indigo-50 mb-4">
+              <h3 class="font-semibold text-indigo-900 mb-3">记录负面想法</h3>
+              
+              <div class="mb-3">
+                <label class="block text-sm text-gray-600 mb-1">情境</label>
+                <textarea class="w-full p-3 bg-gray-50 rounded-xl border border-gray-200 text-sm" rows="2" placeholder="描述发生了什么..."></textarea>
+              </div>
+              
+              <div class="mb-3">
+                <label class="block text-sm text-gray-600 mb-1">自动化想法</label>
+                <textarea class="w-full p-3 bg-gray-50 rounded-xl border border-gray-200 text-sm" rows="2" placeholder="我当时的想法是..."></textarea>
+              </div>
+              
+              <div class="mb-3">
+                <label class="block text-sm text-gray-600 mb-1">情绪反应 (选择适用项)</label>
+                <div class="flex flex-wrap gap-2 mt-1">
+                  <span class="text-xs bg-gray-100 text-gray-700 py-1 px-3 rounded-full micro-feedback">焦虑</span>
+                  <span class="text-xs bg-gray-100 text-gray-700 py-1 px-3 rounded-full micro-feedback">恐惧</span>
+                  <span class="text-xs bg-indigo-100 text-indigo-700 py-1 px-3 rounded-full micro-feedback">尴尬</span>
+                  <span class="text-xs bg-gray-100 text-gray-700 py-1 px-3 rounded-full micro-feedback">沮丧</span>
+                  <span class="text-xs bg-gray-100 text-gray-700 py-1 px-3 rounded-full micro-feedback">愤怒</span>
+                  <span class="text-xs bg-indigo-100 text-indigo-700 py-1 px-3 rounded-full micro-feedback">紧张</span>
+                </div>
+              </div>
+              
+              <button class="w-full bg-indigo-600 text-white py-3 px-4 rounded-xl font-medium shadow-md shadow-indigo-100 flex justify-center items-center gap-2 micro-feedback">
+                <img src="./话匣子 - 社交焦虑助手_files/brain.svg" class="w-5 h-5">
+                分析并重构思维
+              </button>
+            </div>
+            
+            <!-- 过往记录 - 添加二次确认机制 -->
+            <h3 class="font-semibold text-indigo-900 mb-3">历史记录</h3>
+            <div class="space-y-3 mb-4">
+              <div class="bg-white rounded-2xl p-4 shadow-sm border border-indigo-50 micro-feedback">
+                <div class="flex justify-between items-start mb-2">
+                  <h4 class="font-medium text-gray-800">团队会议发言紧张</h4>
+                  <div class="flex items-center gap-1">
+                    <span class="text-xs text-gray-500">昨天</span>
+                    <button class="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center micro-feedback">
+                      <img src="./话匣子 - 社交焦虑助手_files/more-vertical.svg" class="w-4 h-4 text-gray-500">
+                    </button>
+                  </div>
+                </div>
+                <p class="text-sm text-gray-600 mb-2">我担心我的发言会被同事嘲笑，感到非常紧张。</p>
+                <div class="flex items-center">
+                  <span class="text-xs bg-green-100 text-green-700 py-0.5 px-2 rounded-full mr-2">已重构</span>
+                  <span class="text-xs text-indigo-600">查看详情</span>
+                </div>
+              </div>
+              
+              <div class="bg-white rounded-2xl p-4 shadow-sm border border-indigo-50 micro-feedback">
+                <div class="flex justify-between items-start mb-2">
+                  <h4 class="font-medium text-gray-800">聚会邀约拒绝</h4>
+                  <div class="flex items-center gap-1">
+                    <span class="text-xs text-gray-500">3天前</span>
+                    <button class="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center micro-feedback">
+                      <img src="./话匣子 - 社交焦虑助手_files/more-vertical.svg" class="w-4 h-4 text-gray-500">
+                    </button>
+                  </div>
+                </div>
+                <p class="text-sm text-gray-600 mb-2">我拒绝了朋友的聚会邀请后，担心他们会讨厌我。</p>
+                <div class="flex items-center">
+                  <span class="text-xs bg-green-100 text-green-700 py-0.5 px-2 rounded-full mr-2">已重构</span>
+                  <span class="text-xs text-indigo-600">查看详情</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- 添加删除确认弹窗 -->
+            <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+              <div class="bg-white rounded-2xl p-5 w-64 shadow-lg">
+                <h4 class="font-medium text-gray-800 mb-3 text-center">确认删除</h4>
+                <p class="text-sm text-gray-600 mb-4 text-center">确定要删除这条记录吗？此操作无法撤销。</p>
+                <div class="flex gap-2">
+                  <button class="flex-1 py-2 bg-gray-100 text-gray-700 text-sm rounded-lg micro-feedback">取消</button>
+                  <button class="flex-1 py-2 bg-red-500 text-white text-sm rounded-lg micro-feedback">确认删除</button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- 对话复盘 -->
+            <div class="flex items-center mb-4">
+              <div class="flex-1 h-0.5 bg-gray-200"></div>
+              <span class="px-4 text-sm font-medium text-gray-500">对话复盘</span>
+              <div class="flex-1 h-0.5 bg-gray-200"></div>
+            </div>
+            
+            <div class="bg-white rounded-2xl p-4 shadow-sm border border-indigo-50 mb-4">
+              <h3 class="font-semibold text-indigo-900 mb-3">上传对话记录</h3>
+              <p class="text-sm text-gray-600 mb-3">上传过往对话内容，AI将帮你分析改进点</p>
+              
+              <div class="border-2 border-dashed border-gray-200 rounded-xl p-6 flex flex-col items-center justify-center mb-4 micro-feedback">
+                <div class="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center mb-2">
+                  <img src="./话匣子 - 社交焦虑助手_files/upload.svg" class="w-6 h-6 text-indigo-600">
+                </div>
+                <p class="text-sm text-gray-500 mb-1">点击上传或拖拽文件</p>
+                <p class="text-xs text-gray-400">支持图片、音频或文本</p>
+              </div>
+              
+              <button class="w-full bg-white text-indigo-600 border border-indigo-200 py-3 px-4 rounded-xl font-medium shadow-sm flex justify-center items-center gap-2 micro-feedback">
+                <img src="./话匣子 - 社交焦虑助手_files/file-text.svg" class="w-5 h-5">
+                从训练记录中选择
+              </button>
+            </div>
+          </div>
+          
+          <!-- 紧急通道悬浮按钮 -->
+          
+          
+          <!-- 底部导航 - 统一为四个标签 -->
+          <div class="bg-white border-t border-gray-100 p-2 flex justify-around">
+            <button class="w-16 h-16 flex flex-col items-center justify-center text-gray-400">
+              <img src="./话匣子 - 社交焦虑助手_files/house.svg" class="w-6 h-6 mb-1">
+              <span class="text-xs">首页</span>
+            </button>
+            <button class="w-16 h-16 flex flex-col items-center justify-center text-gray-400">
+              <img src="./话匣子 - 社交焦虑助手_files/users.svg" class="w-6 h-6 mb-1">
+              <span class="text-xs">社交训练</span>
+            </button>
+            <button class="w-16 h-16 flex flex-col items-center justify-center text-indigo-600">
+              <img src="./话匣子 - 社交焦虑助手_files/brain.svg" class="w-6 h-6 mb-1">
+              <span class="text-xs">认知重构</span>
+            </button>
+            <button class="w-16 h-16 flex flex-col items-center justify-center text-gray-400">
+              <img src="./话匣子 - 社交焦虑助手_files/user.svg" class="w-6 h-6 mb-1">
+              <span class="text-xs">我的</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 社交活动计划 -->
+      <div class="mockup-border iphone14promax bg-gradient-to-br from-indigo-50 to-purple-50">
+        <div class="h-full flex flex-col relative">
+          <!-- 顶部导航 -->
+          <div class="p-6 flex items-center gap-2">
+            <button class="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm micro-feedback">
+              <img src="./话匣子 - 社交焦虑助手_files/chevron-left.svg" class="w-5 h-5">
+            </button>
+            <h2 class="text-lg font-bold text-indigo-900 flex-1 text-center">社交计划</h2>
+            <button class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center micro-feedback">
+              <img src="./话匣子 - 社交焦虑助手_files/plus.svg" class="w-5 h-5 text-indigo-600">
+            </button>
+          </div>
+          
+          <!-- 日历视图 -->
+          <div class="px-6">
+            <div class="bg-white rounded-2xl p-4 shadow-sm border border-indigo-50 mb-4">
+              <div class="flex justify-between items-center mb-4">
+                <h3 class="font-medium text-gray-800">2023年11月</h3>
+                <div class="flex gap-2">
+                  <button class="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center micro-feedback">
+                    <img src="./话匣子 - 社交焦虑助手_files/chevron-left.svg" class="w-4 h-4 text-gray-600">
+                  </button>
+                  <button class="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center micro-feedback">
+                    <img src="./话匣子 - 社交焦虑助手_files/chevron-right.svg" class="w-4 h-4 text-gray-600">
+                  </button>
+                </div>
+              </div>
+              
+              <!-- 日历网格 -->
+              <div class="grid grid-cols-7 gap-1 text-center mb-2">
+                <span class="text-xs text-gray-400">日</span>
+                <span class="text-xs text-gray-400">一</span>
+                <span class="text-xs text-gray-400">二</span>
+                <span class="text-xs text-gray-400">三</span>
+                <span class="text-xs text-gray-400">四</span>
+                <span class="text-xs text-gray-400">五</span>
+                <span class="text-xs text-gray-400">六</span>
+              </div>
+              
+              <div class="grid grid-cols-7 gap-1">
+                <span class="text-xs text-gray-300 h-8 flex items-center justify-center">29</span>
+                <span class="text-xs text-gray-300 h-8 flex items-center justify-center">30</span>
+                <span class="text-xs text-gray-300 h-8 flex items-center justify-center">31</span>
+                <span class="text-xs text-gray-600 h-8 flex items-center justify-center">1</span>
+                <span class="text-xs text-gray-600 h-8 flex items-center justify-center">2</span>
+                <span class="text-xs text-gray-600 h-8 flex items-center justify-center">3</span>
+                <span class="text-xs text-gray-600 h-8 flex items-center justify-center">4</span>
+                
+                <span class="text-xs text-gray-600 h-8 flex items-center justify-center">5</span>
+                <span class="text-xs text-gray-600 h-8 flex items-center justify-center">6</span>
+                <span class="text-xs text-gray-600 h-8 flex items-center justify-center">7</span>
+                <span class="text-xs text-gray-600 h-8 flex items-center justify-center">8</span>
+                <span class="text-xs text-gray-600 h-8 flex items-center justify-center">9</span>
+                <span class="text-xs text-gray-600 h-8 flex items-center justify-center">10</span>
+                <span class="text-xs text-gray-600 h-8 flex items-center justify-center rounded-full bg-indigo-100 micro-feedback">11</span>
+                
+                <span class="text-xs text-gray-600 h-8 flex items-center justify-center">12</span>
+                <span class="text-xs text-gray-600 h-8 flex items-center justify-center">13</span>
+                <span class="text-xs text-white h-8 flex items-center justify-center rounded-full bg-indigo-600 micro-feedback">14</span>
+                <span class="text-xs text-gray-600 h-8 flex items-center justify-center">15</span>
+                <span class="text-xs text-gray-600 h-8 flex items-center justify-center rounded-full bg-orange-100 micro-feedback">16</span>
+                <span class="text-xs text-gray-600 h-8 flex items-center justify-center">17</span>
+                <span class="text-xs text-gray-600 h-8 flex items-center justify-center">18</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 内容区域 -->
+          <div class="px-6 overflow-y-auto flex-1">
+            <div class="flex items-center mb-4">
+              <div class="flex-1 h-0.5 bg-gray-200"></div>
+              <span class="px-4 text-sm font-medium text-gray-500">今天</span>
+              <div class="flex-1 h-0.5 bg-gray-200"></div>
+            </div>
+            
+            <!-- 今日计划 - 添加情感化反馈 -->
+            <div class="bg-white rounded-2xl p-4 shadow-sm border border-indigo-50 border-l-4 border-l-indigo-600 mb-4 micro-feedback">
+              <div class="flex justify-between items-start mb-1">
+                <h3 class="font-semibold text-indigo-900">团队项目讨论</h3>
+                <span class="text-xs bg-red-100 text-red-700 py-0.5 px-2 rounded-full">今天 15:00</span>
+              </div>
+              <p class="text-sm text-gray-600 mb-3">与团队成员讨论新项目计划和分工</p>
+              
+              <div class="flex justify-between items-center mb-3">
+                <div class="flex items-center gap-1">
+                  <img src="./话匣子 - 社交焦虑助手_files/map-pin.svg" class="w-4 h-4 text-gray-400">
+                  <span class="text-xs text-gray-500">公司会议室</span>
+                </div>
+                <div class="flex items-center gap-1">
+                  <img src="./话匣子 - 社交焦虑助手_files/users.svg" class="w-4 h-4 text-gray-400">
+                  <span class="text-xs text-gray-500">5人</span>
+                </div>
+              </div>
+              
+              <!-- 添加情感化反馈 -->
+              <div class="bg-indigo-50 p-2 rounded-lg mb-3">
+                <p class="text-xs text-indigo-700 flex items-center gap-1">
+                  <img src="./话匣子 - 社交焦虑助手_files/star.svg" class="w-3 h-3">
+                  <span>提示：深呼吸，你已经准备好了！记得保持微笑和眼神接触。</span>
+                </p>
+              </div>
+              
+              <div class="flex gap-2">
+                <button class="flex-1 py-2 bg-indigo-600 text-white text-sm rounded-lg flex justify-center items-center gap-1 micro-feedback">
+                  <img src="./话匣子 - 社交焦虑助手_files/list-checks.svg" class="w-4 h-4">
+                  任务拆解
+                </button>
+                <button class="flex-1 py-2 bg-white text-indigo-600 text-sm rounded-lg border border-indigo-200 flex justify-center items-center gap-1 micro-feedback">
+                  <img src="./话匣子 - 社交焦虑助手_files/edit.svg" class="w-4 h-4">
+                  修改
+                </button>
+              </div>
+            </div>
+            
+            <div class="flex items-center mb-4">
+              <div class="flex-1 h-0.5 bg-gray-200"></div>
+              <span class="px-4 text-sm font-medium text-gray-500">即将到来</span>
+              <div class="flex-1 h-0.5 bg-gray-200"></div>
+            </div>
+            
+            <!-- 即将到来的计划 -->
+            <div class="space-y-3 mb-6">
+              <div class="bg-white rounded-2xl p-4 shadow-sm border border-indigo-50 border-l-4 border-l-orange-400 micro-feedback">
+                <div class="flex justify-between items-start">
+                  <h3 class="font-semibold text-gray-800">与Lisa咖啡约谈</h3>
+                  <span class="text-xs bg-orange-100 text-orange-700 py-0.5 px-2 rounded-full">11月16日</span>
+                </div>
+                <p class="text-sm text-gray-600 mb-2">讨论设计合作项目</p>
+                
+                <div class="flex gap-1 mb-1">
+                  <img src="./话匣子 - 社交焦虑助手_files/check-circle.svg" class="w-4 h-4 text-green-500">
+                  <span class="text-xs text-gray-500">已拆解为3个小任务</span>
+                </div>
+                
+                <!-- 添加情感化反馈 -->
+                <div class="bg-orange-50 p-2 rounded-lg mt-2">
+                  <p class="text-xs text-orange-700 flex items-center gap-1">
+                    <img src="./话匣子 - 社交焦虑助手_files/lightbulb.svg" class="w-3 h-3">
+                    <span>准备工作：提前5分钟到达，带上合作提案和设计样本</span>
+                  </p>
+                </div>
+              </div>
+              
+              <div class="bg-white rounded-2xl p-4 shadow-sm border border-indigo-50 border-l-4 border-l-blue-400 micro-feedback">
+                <div class="flex justify-between items-start">
+                  <h3 class="font-semibold text-gray-800">朋友聚会</h3>
+                  <span class="text-xs bg-blue-100 text-blue-700 py-0.5 px-2 rounded-full">11月20日</span>
+                </div>
+                <p class="text-sm text-gray-600 mb-2">老同学小聚，共5人参加</p>
+                
+                <div class="flex gap-1 mb-1">
+                  <img src="./话匣子 - 社交焦虑助手_files/alert-circle.svg" class="w-4 h-4 text-orange-500">
+                  <span class="text-xs text-gray-500">尚未制定具体计划</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- 已完成计划 -->
+            <div class="flex items-center mb-4">
+              <div class="flex-1 h-0.5 bg-gray-200"></div>
+              <span class="px-4 text-sm font-medium text-gray-500">已完成</span>
+              <div class="flex-1 h-0.5 bg-gray-200"></div>
+            </div>
+            
+            <div class="bg-white rounded-2xl p-4 shadow-sm border border-indigo-50 opacity-70 micro-feedback">
+              <div class="flex justify-between items-start">
+                <h3 class="font-semibold text-gray-800">部门午餐会</h3>
+                <span class="text-xs bg-green-100 text-green-700 py-0.5 px-2 rounded-full">已完成</span>
+              </div>
+              <p class="text-sm text-gray-600 mb-2">11月11日 · 公司附近餐厅</p>
+              
+              <button class="w-full py-2 bg-gray-100 text-sm text-gray-600 rounded-lg flex justify-center items-center gap-1 mt-2 micro-feedback">
+                <img src="./话匣子 - 社交焦虑助手_files/clipboard-list.svg" class="w-4 h-4">
+                查看复盘笔记
+              </button>
+            </div>
+          </div>
+          
+          <!-- 紧急通道悬浮按钮 -->
+          
+          
+          <!-- 底部导航 - 统一为四个标签 -->
+          <div class="bg-white border-t border-gray-100 p-2 flex justify-around">
+            <button class="w-16 h-16 flex flex-col items-center justify-center text-gray-400">
+              <img src="./话匣子 - 社交焦虑助手_files/house.svg" class="w-6 h-6 mb-1">
+              <span class="text-xs">首页</span>
+            </button>
+            <button class="w-16 h-16 flex flex-col items-center justify-center text-gray-400">
+                <img src="./话匣子 - 社交焦虑助手_files/users.svg" class="w-6 h-6 mb-1">
+                <span class="text-xs">社交训练</span>
+              </button>
+              <button class="w-16 h-16 flex flex-col items-center justify-center text-gray-400">
+                <img src="./话匣子 - 社交焦虑助手_files/brain.svg" class="w-6 h-6 mb-1">
+                <span class="text-xs">认知重构</span>
+              </button>
+              <button class="w-16 h-16 flex flex-col items-center justify-center text-gray-400">
+                <img src="./话匣子 - 社交焦虑助手_files/user.svg" class="w-6 h-6 mb-1">
+                <span class="text-xs">我的</span>
+              </button>
+            </div>
+          </div>
+        </div>
+  
+        <!-- 紧急情绪工具箱 -->
+        <div class="mockup-border iphone14promax bg-gradient-to-br from-indigo-50 to-purple-50">
+          <div class="h-full flex flex-col relative">
+            <!-- 顶部导航 -->
+            <div class="p-6 flex items-center gap-2">
+              <button class="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm micro-feedback">
+                <img src="./话匣子 - 社交焦虑助手_files/chevron-left.svg" class="w-5 h-5">
+              </button>
+              <h2 class="text-lg font-bold text-indigo-900 flex-1 text-center">紧急工具箱</h2>
+            </div>
+            
+            <!-- 内容区域 -->
+            <div class="px-6 overflow-y-auto flex-1">
+              <div class="text-center mb-6">
+                <p class="text-sm text-gray-600">为社交焦虑时刻准备的应急工具，帮助你快速缓解压力</p>
+              </div>
+              
+              <!-- 模拟来电 -->
+              <div class="bg-white rounded-2xl p-5 shadow-sm border border-indigo-50 mb-5 relative overflow-hidden micro-feedback">
+                
+                
+                <div class="flex justify-between items-start relative z-10">
+                  <div>
+                    <h3 class="font-semibold text-gray-800 mb-1">模拟来电</h3>
+                    <p class="text-sm text-gray-600 mb-4">随时启动一个模拟来电，帮助你礼貌地离开尴尬场合</p>
+                    
+                    <div class="flex gap-3">
+                      <button class="py-2 px-4 bg-red-500 text-white text-sm rounded-lg flex items-center gap-1 micro-feedback pulse-circle">
+                        <img src="./话匣子 - 社交焦虑助手_files/phone-incoming.svg" class="w-4 h-4">
+                        立即启动
+                      </button>
+                      <button class="py-2 px-4 bg-white text-gray-700 text-sm rounded-lg border border-gray-200 flex items-center gap-1 micro-feedback">
+                        <img src="./话匣子 - 社交焦虑助手_files/settings.svg" class="w-4 h-4">
+                        设置
+                      </button>
+                    </div>
+                  </div>
+                  
+                  <div class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center">
+                    <img src="./话匣子 - 社交焦虑助手_files/phone.svg" class="w-5 h-5 text-red-500">
+                  </div>
+                </div>
+              </div>
+              
+              <!-- 冥想 -->
+              <div class="bg-white rounded-2xl p-5 shadow-sm border border-indigo-50 mb-5 relative overflow-hidden micro-feedback">
+                
+                
+                <div class="flex justify-between items-start relative z-10">
+                  <div>
+                    <h3 class="font-semibold text-gray-800 mb-1">冥想放松</h3>
+                    <p class="text-sm text-gray-600 mb-4">通过引导式呼吸和冥想，快速缓解焦虑情绪</p>
+                    
+                    <div class="flex gap-3">
+                      <button class="py-1 px-4 bg-blue-500 text-white text-sm rounded-lg flex items-center gap-1 micro-feedback">
+                        <img src="./话匣子 - 社交焦虑助手_files/play.svg" class="w-4 h-4">现在开始                      </button>
+                      <button class="py-2 px-4 bg-white text-gray-700 text-sm rounded-lg border border-gray-200 flex items-center gap-1 micro-feedback">
+                        <img src="./话匣子 - 社交焦虑助手_files/list.svg" class="w-4 h-4">
+                        模式
+                      </button>
+                    </div>
+                  </div>
+                  
+                  <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
+                    <img src="./话匣子 - 社交焦虑助手_files/cloud.svg" class="w-5 h-5 text-blue-500 breathing-animation">
+                  </div>
+                </div>
+              </div>
+              
+              <!-- 快捷短语 -->
+              <div class="bg-white rounded-2xl p-5 shadow-sm border border-indigo-50 mb-5 micro-feedback">
+                <h3 class="font-semibold text-gray-800 mb-3 flex items-center gap-2">
+                  <img src="./话匣子 - 社交焦虑助手_files/message-square.svg" class="w-5 h-5 text-purple-500">
+                  应急短语库
+                </h3>
+                <p class="text-sm text-gray-600 mb-4">社交场合常用的礼貌表达方式，帮助你平稳过渡</p>
+                
+                <div class="space-y-2">
+                  <div class="p-3 bg-gray-50 rounded-lg text-sm text-gray-700 micro-feedback">
+                    "抱歉，我需要接一个重要电话，请稍等我一下。"
+                  </div>
+                  <div class="p-3 bg-gray-50 rounded-lg text-sm text-gray-700 micro-feedback">
+                    "不好意思，我刚收到一个紧急消息，需要立即处理。"
+                  </div>
+                  <div class="p-3 bg-gray-50 rounded-lg text-sm text-gray-700 micro-feedback">
+                    "我需要去洗手间，稍后回来继续我们的谈话。"
+                  </div>
+                </div>
+                
+                <button class="w-full py-2 bg-white text-sm text-purple-600 rounded-lg flex justify-center items-center gap-1 mt-3 border border-purple-200 micro-feedback">
+                  <img src="./话匣子 - 社交焦虑助手_files/more-horizontal.svg" class="w-4 h-4">
+                  查看更多
+                </button>
+              </div>
+              
+              
+              
+            </div>
+            
+            <!-- 紧急通道悬浮按钮 -->
+            
+            
+            <!-- 底部导航 - 统一为四个标签 -->
+            <div class="bg-white border-t border-gray-100 p-2 flex justify-around">
+              <button class="w-16 h-16 flex flex-col items-center justify-center text-gray-400">
+                <img src="./话匣子 - 社交焦虑助手_files/house.svg" class="w-6 h-6 mb-1">
+                <span class="text-xs">首页</span>
+              </button>
+              <button class="w-16 h-16 flex flex-col items-center justify-center text-gray-400">
+                <img src="./话匣子 - 社交焦虑助手_files/users.svg" class="w-6 h-6 mb-1">
+                <span class="text-xs">社交训练</span>
+              </button>
+              <button class="w-16 h-16 flex flex-col items-center justify-center text-gray-400">
+                <img src="./话匣子 - 社交焦虑助手_files/brain.svg" class="w-6 h-6 mb-1">
+                <span class="text-xs">认知重构</span>
+              </button>
+              <button class="w-16 h-16 flex flex-col items-center justify-center text-gray-400">
+                <img src="./话匣子 - 社交焦虑助手_files/user.svg" class="w-6 h-6 mb-1">
+                <span class="text-xs">我的</span>
+              </button>
+            </div>
+          </div>
+        </div>
+  
+        <!-- 个人页 -->
+        <div class="mockup-border iphone14promax bg-gradient-to-br from-indigo-50 to-purple-50">
+          <div class="h-full flex flex-col relative">
+            <!-- 顶部个人信息 -->
+            <div class="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-b-3xl p-6 pt-12 pb-8 relative">
+              <div class="absolute top-4 right-4 flex gap-2">
+                <button class="w-8 h-8 rounded-full bg-white bg-opacity-20 flex items-center justify-center micro-feedback">
+                  <img src="./话匣子 - 社交焦虑助手_files/bell.svg" class="w-4 h-4 text-white">
+                </button>
+                <button class="w-8 h-8 rounded-full bg-white bg-opacity-20 flex items-center justify-center micro-feedback">
+                  <img src="./话匣子 - 社交焦虑助手_files/settings.svg" class="w-4 h-4 text-white">
+                </button>
+              </div>
+              
+              <div class="flex items-center gap-4">
+                <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-white">
+                  <img src="./话匣子 - 社交焦虑助手_files/photo-1494790108377-be9c29b29330" class="w-full h-full object-cover">
+                </div>
+                <div>
+                  <h2 class="text-xl font-bold text-white">小林</h2>
+                  <p class="text-white text-opacity-80 text-sm">社交进步中的我</p>
+                </div>
+              </div>
+              
+              <div class="mt-5 grid grid-cols-3 gap-3">
+                <div class="bg-white bg-opacity-20 rounded-lg p-2 text-center backdrop-blur-sm">
+                  <h3 class="text-xl font-bold text-white">7</h3>
+                  <p class="text-white text-opacity-80 text-xs">训练次数</p>
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-lg p-2 text-center backdrop-blur-sm">
+                  <h3 class="text-xl font-bold text-white">3</h3>
+                  <p class="text-white text-opacity-80 text-xs">社交计划</p>
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-lg p-2 text-center backdrop-blur-sm">
+                  <h3 class="text-xl font-bold text-white">5</h3>
+                  <p class="text-white text-opacity-80 text-xs">连续打卡</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- 内容区域 -->
+            <div class="px-6 pt-5 overflow-y-auto flex-1">
+              <!-- 成就进度 -->
+              <div class="bg-white rounded-2xl p-4 shadow-sm border border-indigo-50 mb-5 micro-feedback">
+                <div class="flex justify-between items-center mb-3">
+                  <h3 class="font-semibold text-gray-800">我的成就</h3>
+                  <span class="text-xs font-medium text-indigo-600">查看全部</span>
+                </div>
+                
+                <div class="flex gap-2 mb-3">
+                  <div class="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center">
+                    <img src="./话匣子 - 社交焦虑助手_files/award.svg" class="w-6 h-6 text-indigo-600">
+                  </div>
+                  <div class="flex-1">
+                    <h4 class="font-medium text-gray-800">社交新手</h4>
+                    <div class="w-full bg-gray-200 rounded-full h-2 mt-1">
+                      <div class="bg-indigo-600 h-2 rounded-full" style="width: 70%"></div>
+                    </div>
+                    <div class="flex justify-between mt-1">
+                      <span class="text-xs text-gray-500">完成7/10次训练</span>
+                      <span class="text-xs text-indigo-600">70%</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-3">
+                  <div class="w-14 h-14 rounded-lg bg-gray-100 flex flex-col items-center justify-center micro-feedback">
+                    <img src="./话匣子 - 社交焦虑助手_files/message-circle.svg" class="w-6 h-6 text-indigo-600 mb-1">
+                    <span class="text-xs text-gray-500">对话达人</span>
+                  </div>
+                  <div class="w-14 h-14 rounded-lg bg-gray-100 flex flex-col items-center justify-center micro-feedback">
+                    <img src="./话匣子 - 社交焦虑助手_files/calendar.svg" class="w-6 h-6 text-indigo-600 mb-1">
+                    <span class="text-xs text-gray-500">计划通</span>
+                  </div>
+                  <div class="w-14 h-14 rounded-lg bg-gray-100 flex flex-col items-center justify-center opacity-50 micro-feedback">
+                    <img src="./话匣子 - 社交焦虑助手_files/brain.svg" class="w-6 h-6 text-gray-400 mb-1">
+                    <span class="text-xs text-gray-500">思维大师</span>
+                  </div>
+                  <div class="w-14 h-14 rounded-lg bg-gray-100 flex flex-col items-center justify-center opacity-50 micro-feedback">
+                    <img src="./话匣子 - 社交焦虑助手_files/users.svg" class="w-6 h-6 text-gray-400 mb-1">
+                    <span class="text-xs text-gray-500">社交王者</span>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- 知识库 -->
+              <h3 class="font-semibold text-indigo-900 mb-3">知识库</h3>
+              <div class="bg-white rounded-2xl p-4 shadow-sm border border-indigo-50 mb-4 micro-feedback">
+                <div class="flex items-center justify-between mb-3">
+                  <h4 class="font-medium text-gray-800 flex items-center gap-1">
+                    <img src="./话匣子 - 社交焦虑助手_files/book-open.svg" class="w-4 h-4 text-indigo-600">
+                    CBT技术指南
+                  </h4>
+                  <span class="text-xs bg-green-100 text-green-700 py-0.5 px-2 rounded-full">新</span>
+                </div>
+                <p class="text-sm text-gray-600 mb-3">学习认知行为疗法的基础知识，帮助改变负面思维模式</p>
+                <button class="w-full py-2 bg-gray-100 text-sm text-gray-700 rounded-lg flex justify-center items-center gap-1 micro-feedback">
+                  <img src="./话匣子 - 社交焦虑助手_files/chevron-right.svg" class="w-4 h-4">
+                  继续阅读
+                </button>
+              </div>
+              
+              <div class="bg-white rounded-2xl p-4 shadow-sm border border-indigo-50 mb-4 micro-feedback">
+                <div class="flex items-center justify-between mb-3">
+                  <h4 class="font-medium text-gray-800 flex items-center gap-1">
+                    <img src="./话匣子 - 社交焦虑助手_files/message-square.svg" class="w-4 h-4 text-orange-500">
+                    社交技巧大全
+                  </h4>
+                </div>
+                <p class="text-sm text-gray-600 mb-3">实用的社交对话技巧、肢体语言和表情管理指南</p>
+                <button class="w-full py-2 bg-gray-100 text-sm text-gray-700 rounded-lg flex justify-center items-center gap-1 micro-feedback">
+                  <img src="./话匣子 - 社交焦虑助手_files/chevron-right.svg" class="w-4 h-4">
+                  开始学习
+                </button>
+              </div>
+              
+              <!-- 账号信息 -->
+              <div class="bg-white rounded-2xl p-4 shadow-sm border border-indigo-50 mb-8 micro-feedback">
+                <h3 class="font-semibold text-gray-800 mb-3">账号与隐私</h3>
+                
+                <div class="space-y-3">
+                  <div class="flex items-center justify-between micro-feedback">
+                    <div class="flex items-center gap-3">
+                      <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+                        <img src="./话匣子 - 社交焦虑助手_files/shield.svg" class="w-4 h-4 text-blue-600">
+                      </div>
+                      <span class="text-sm text-gray-700">隐私设置</span>
+                    </div>
+                    <img src="./话匣子 - 社交焦虑助手_files/chevron-right.svg" class="w-5 h-5 text-gray-400">
+                  </div>
+                  
+                  <div class="flex items-center justify-between micro-feedback">
+                    <div class="flex items-center gap-3">
+                      <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center">
+                        <img src="./话匣子 - 社交焦虑助手_files/help-circle.svg" class="w-4 h-4 text-purple-600">
+                      </div>
+                      <span class="text-sm text-gray-700">帮助与支持</span>
+                    </div>
+                    <img src="./话匣子 - 社交焦虑助手_files/chevron-right.svg" class="w-5 h-5 text-gray-400">
+                  </div>
+                  
+                  <div class="flex items-center justify-between micro-feedback">
+                    <div class="flex items-center gap-3">
+                      <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
+                        <img src="./话匣子 - 社交焦虑助手_files/heart.svg" class="w-4 h-4 text-green-600">
+                      </div>
+                      <span class="text-sm text-gray-700">关于我们</span>
+                    </div>
+                    <img src="./话匣子 - 社交焦虑助手_files/chevron-right.svg" class="w-5 h-5 text-gray-400">
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- 紧急通道悬浮按钮 -->
+            
+            
+            <!-- 底部导航 - 统一为四个标签 -->
+            <div class="bg-white border-t border-gray-100 p-2 flex justify-around">
+              <button class="w-16 h-16 flex flex-col items-center justify-center text-gray-400">
+                <img src="./话匣子 - 社交焦虑助手_files/house.svg" class="w-6 h-6 mb-1">
+                <span class="text-xs">首页</span>
+              </button>
+              <button class="w-16 h-16 flex flex-col items-center justify-center text-gray-400">
+                <img src="./话匣子 - 社交焦虑助手_files/users.svg" class="w-6 h-6 mb-1">
+                <span class="text-xs">社交训练</span>
+              </button>
+              <button class="w-16 h-16 flex flex-col items-center justify-center text-gray-400">
+                <img src="./话匣子 - 社交焦虑助手_files/brain.svg" class="w-6 h-6 mb-1">
+                <span class="text-xs">认知重构</span>
+              </button>
+              <button class="w-16 h-16 flex flex-col items-center justify-center text-indigo-600">
+                <img src="./话匣子 - 社交焦虑助手_files/user.svg" class="w-6 h-6 mb-1">
+                <span class="text-xs">我的</span>
+              </button>
+            </div>
+          </div>
+        </div>
+  
+        <!-- 冥想工具页面 -->
+        <div class="mockup-border iphone14promax bg-gradient-to-r from-blue-600 to-indigo-800">
+          <div class="h-full flex flex-col relative">
+            <!-- 顶部导航 -->
+            <div class="p-6 flex items-center gap-2">
+              <button class="w-8 h-8 rounded-full bg-white bg-opacity-20 flex items-center justify-center micro-feedback">
+                <img src="./话匣子 - 社交焦虑助手_files/chevron-left.svg" class="w-5 h-5 text-white">
+              </button>
+              <h2 class="text-lg font-bold text-white flex-1 text-center">呼吸冥想</h2>
+            </div>
+            
+            <!-- 冥想内容 -->
+            <div class="flex-1 flex flex-col items-center justify-center px-8">
+              <div class="relative w-40 h-40 mb-8">
+                <div class="absolute inset-0 bg-white bg-opacity-10 rounded-full blur-lg"></div>
+                <div class="absolute inset-4 bg-white bg-opacity-20 rounded-full"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="w-28 h-28 bg-white bg-opacity-30 rounded-full flex items-center justify-center breathing-animation">
+                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center">
+                      <span class="text-indigo-800 text-xl font-bold">吸气</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="text-center mb-8">
+                <h3 class="text-white text-xl font-bold mb-1">放松心情</h3>
+                <p class="text-white text-opacity-80">跟随动画节奏进行深呼吸</p>
+                <p class="text-white text-opacity-80 mt-4">已持续: 01:45</p>
+              </div>
+              
+              <div class="flex gap-4">
+                <button class="w-12 h-12 rounded-full bg-white bg-opacity-20 flex items-center justify-center micro-feedback">
+                  <img src="./话匣子 - 社交焦虑助手_files/skip-back.svg" class="w-6 h-6 text-white">
+                </button>
+                <button class="w-16 h-16 rounded-full bg-white flex items-center justify-center micro-feedback">
+                  <img src="./话匣子 - 社交焦虑助手_files/pause.svg" class="w-8 h-8 text-indigo-800">
+                </button>
+                <button class="w-12 h-12 rounded-full bg-white bg-opacity-20 flex items-center justify-center micro-feedback">
+                  <img src="./话匣子 - 社交焦虑助手_files/skip-forward.svg" class="w-6 h-6 text-white">
+                </button>
+              </div>
+            </div>
+            
+            <!-- 底部选项 -->
+            <div class="p-6">
+              <div class="glass-card bg-white bg-opacity-10 rounded-2xl p-4 border border-white border-opacity-20">
+                <div class="flex justify-between items-center mb-3">
+                  <h3 class="text-white font-medium">背景音乐</h3>
+                  <div class="flex items-center">
+                    <img src="./话匣子 - 社交焦虑助手_files/volume-2.svg" class="w-4 h-4 text-white mr-2">
+                    <div class="w-24 h-1 bg-white bg-opacity-20 rounded-full">
+                      <div class="w-3/4 h-1 bg-white rounded-full"></div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="flex gap-2">
+                  <button class="flex-1 py-2 bg-white bg-opacity-20 text-white text-xs rounded-lg micro-feedback">轻音乐</button>
+                  <button class="flex-1 py-2 bg-white text-indigo-800 text-xs rounded-lg micro-feedback">自然声</button>
+                  <button class="flex-1 py-2 bg-white bg-opacity-20 text-white text-xs rounded-lg micro-feedback">静音</button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- 紧急通道悬浮按钮 -->
+            
+          </div>
+        </div>
+  
+        <!-- 模拟来电页面 -->
+        <div class="mockup-border iphone14promax bg-gradient-to-br from-indigo-50 to-purple-50">
+          <div class="h-full flex flex-col relative">
+            <!-- 来电显示内容 -->
+            <div class="flex-1 flex flex-col items-center justify-center px-8 pt-12">
+              <div class="w-24 h-24 rounded-full overflow-hidden border-4 border-indigo-100 mb-6 pulse-circle">
+                <img src="./话匣子 - 社交焦虑助手_files/photo-1507003211169-0a1dd7228f2d" class="w-full h-full object-cover">
+              </div>
+              
+              <h2 class="text-2xl font-bold text-gray-800 mb-2">李经理</h2>
+              <p class="text-gray-500 mb-6">公司来电</p>
+              
+              <div class="w-full bg-gray-100 p-4 rounded-lg text-sm text-gray-600 mb-6">
+                <p>这是一个模拟来电，可以帮你礼貌地脱离当前社交场合。点击接听后会有引导语音播放。</p>
+              </div>
+              
+              <div class="flex justify-center gap-6 mb-4">
+                <div class="relative">
+                  <div class="absolute inset-0 bg-red-500 rounded-full animate-ping opacity-20"></div>
+                  <button class="w-16 h-16 rounded-full bg-red-500 flex items-center justify-center shadow-lg shadow-red-200 relative z-10 micro-feedback">
+                    <img src="./话匣子 - 社交焦虑助手_files/phone-missed.svg" class="w-8 h-8 text-white">
+                  </button>
+                  <p class="text-center mt-2 text-sm text-gray-600">拒接</p>
+                </div>
+                
+                <div class="relative">
+                  <div class="absolute inset-0 bg-green-500 rounded-full animate-ping opacity-20"></div>
+                  <button class="w-16 h-16 rounded-full bg-green-500 flex items-center justify-center shadow-lg shadow-green-200 relative z-10 micro-feedback">
+                    <img src="./话匣子 - 社交焦虑助手_files/phone.svg" class="w-8 h-8 text-white">
+                  </button>
+                  <p class="text-center mt-2 text-sm text-gray-600">接听</p>
+                </div>
+              </div>
+              
+              <p class="text-center text-xs text-gray-400">此为模拟来电，仅供社交情境使用</p>
+            </div>
+            
+            <!-- 紧急通道悬浮按钮 -->
+            
+          </div>
+        </div>
+        
+        <!-- 全局错误提示框 -->
+        <div class="fixed bottom-20 left-0 right-0 flex justify-center z-50 hidden">
+          <div class="bg-red-100 text-red-700 px-4 py-2 rounded-full shadow-md text-sm flex items-center gap-2">
+            <img src="./话匣子 - 社交焦虑助手_files/alert-circle.svg" class="w-4 h-4">
+            <span>操作失败，请稍后再试</span>
+          </div>
+        </div>
+  
+        <!-- 全局成功提示框 -->
+        <div class="fixed bottom-20 left-0 right-0 flex justify-center z-50 hidden">
+          <div class="bg-green-100 text-green-700 px-4 py-2 rounded-full shadow-md text-sm flex items-center gap-2">
+            <img src="./话匣子 - 社交焦虑助手_files/check-circle.svg" class="w-4 h-4">
+            <span>操作成功！</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  <!-- JavaScript引用 -->
+  <script src="./话匣子 - 社交焦虑助手_files/mock-api.js"></script>
+  <script src="./话匣子 - 社交焦虑助手_files/app.js"></script>
+
+  <!-- 认知重构悬浮窗口 -->
+  <div id="cognitive-restructuring-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+    <div class="bg-white rounded-2xl p-5 w-[90%] max-w-md shadow-lg max-h-[80vh] overflow-y-auto">
+      <!-- 顶部标题和关闭按钮 -->
+      <div class="flex justify-between items-center mb-4">
+        <h3 class="font-bold text-indigo-900 text-lg">思维调整助手</h3>
+        <button id="close-restructuring-modal" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center micro-feedback">
+          <img src="./话匣子 - 社交焦虑助手_files/x.svg" class="w-4 h-4 text-gray-500">
+        </button>
+      </div>
+      
+      <!-- 多步骤表单 -->
+      <div class="cognitive-steps">
+        <!-- 步骤1：收集负面想法 -->
+        <div class="step step-1">
+          <p class="text-gray-600 mb-3">在这个对话中，你注意到自己有什么负面的想法或担忧吗？请描述一下。</p>
+          <textarea class="w-full p-3 bg-gray-50 rounded-xl border border-gray-200 text-sm mb-4" rows="3" placeholder="例如：我担心我说错话会被服务员看不起..." id="negative-thought"></textarea>
+          <button class="w-full bg-indigo-600 text-white py-2 px-4 rounded-xl font-medium shadow-md next-step" data-next="2">继续</button>
+        </div>
+        
+        <!-- 步骤2：识别自动化思维 -->
+        <div class="step step-2 hidden">
+          <p class="text-gray-600 mb-3 thoughts-reflection"></p>
+          <p class="text-gray-600 mb-3">这似乎是一种自动化负面思维。你认为这个想法有多大可能是事实？</p>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-sm text-gray-500">不太可能</span>
+            <input type="range" min="0" max="100" value="50" class="w-full mx-2" id="thought-likelihood">
+            <span class="text-sm text-gray-500">非常可能</span>
+          </div>
+          <p class="text-sm text-gray-500 mb-4 text-center" id="likelihood-value">50%</p>
+          <button class="w-full bg-indigo-600 text-white py-2 px-4 rounded-xl font-medium shadow-md next-step" data-next="3">继续</button>
+        </div>
+        
+        <!-- 步骤3：挑战负面思维 -->
+        <div class="step step-3 hidden">
+          <p class="text-gray-600 mb-3">让我们来检验这个想法：</p>
+          <div class="bg-indigo-50 p-3 rounded-lg mb-4">
+            <p class="text-indigo-700 font-medium mb-2">有什么证据支持这个想法吗？</p>
+            <textarea class="w-full p-3 bg-white rounded-xl border border-indigo-100 text-sm mb-3" rows="2" id="evidence-for"></textarea>
+            
+            <p class="text-indigo-700 font-medium mb-2">有什么证据反对这个想法吗？</p>
+            <textarea class="w-full p-3 bg-white rounded-xl border border-indigo-100 text-sm" rows="2" id="evidence-against"></textarea>
+          </div>
+          <button class="w-full bg-indigo-600 text-white py-2 px-4 rounded-xl font-medium shadow-md next-step" data-next="4">继续</button>
+        </div>
+        
+        <!-- 步骤4：替代性思维 -->
+        <div class="step step-4 hidden">
+          <p class="text-gray-600 mb-3">基于我们的讨论，一个更平衡的想法可能是：</p>
+          <div class="bg-green-50 p-4 rounded-lg mb-4 alternative-thought">
+            <!-- 这里会动态填入AI生成的替代性思维 -->
+          </div>
+          <p class="text-gray-600 mb-3">这个新的想法感觉如何？</p>
+          <div class="flex gap-2 mb-4">
+            <button class="flex-1 py-2 bg-gray-100 text-gray-700 rounded-lg feedback-btn" data-value="negative">不太有帮助</button>
+            <button class="flex-1 py-2 bg-gray-100 text-gray-700 rounded-lg feedback-btn" data-value="neutral">一般</button>
+            <button class="flex-1 py-2 bg-gray-100 text-gray-700 rounded-lg feedback-btn" data-value="positive">很有帮助</button>
+          </div>
+          <button class="w-full bg-indigo-600 text-white py-2 px-4 rounded-xl font-medium shadow-md next-step" data-next="5">应用这个新想法</button>
+        </div>
+        
+        <!-- 步骤5：总结与应用 -->
+        <div class="step step-5 hidden">
+          <p class="text-gray-600 mb-3">太棒了！你已经成功挑战了负面思维并找到了更平衡的替代想法。</p>
+          <div class="bg-indigo-50 p-4 rounded-lg mb-4">
+            <h4 class="font-medium text-indigo-900 mb-2">记住这个想法</h4>
+            <p class="text-sm text-indigo-700 mb-2 alternative-thought-summary">
+              <!-- 这里会动态填入总结 -->
+            </p>
+            <p class="text-sm text-gray-600">带着这个新的想法，你可以更自信地继续对话。</p>
+          </div>
+          <button class="w-full bg-indigo-600 text-white py-2 px-4 rounded-xl font-medium shadow-md close-and-apply">返回对话</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 添加到HTML中，用于显示认知重构回顾 -->
+  <div id="restructuring-review-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+    <div class="bg-white rounded-2xl p-5 w-[90%] max-w-md shadow-lg max-h-[80vh] overflow-y-auto">
+      <!-- 顶部标题和关闭按钮 -->
+      <div class="flex justify-between items-center mb-4">
+        <h3 class="font-bold text-indigo-900 text-lg">思维调整回顾</h3>
+        <button id="close-review-modal" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center micro-feedback">
+          <img src="./话匣子 - 社交焦虑助手_files/x.svg" class="w-4 h-4 text-gray-500">
+        </button>
+      </div>
+      
+      <!-- 回顾内容区域 -->
+      <div class="space-y-4" id="restructuring-review-content">
+        <!-- 内容将由JS动态填充 -->
+      </div>
+      
+      <!-- 底部按钮 -->
+      <div class="mt-6">
+        <button class="w-full bg-indigo-600 text-white py-2 px-4 rounded-xl font-medium shadow-md close-review-modal">
+          关闭
+        </button>
+      </div>
+    </div>
+  </div>
+</body></html>
